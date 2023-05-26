@@ -1,11 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate()
+
+  function change() {
+    navigate('/')
+  }
+
   return (
     <nav className='flex items-center justify-between flex-wrap bg-black p-8'>
       <div className='flex items-center flex-shrink-0 text-white mr-6'>
-        <span className='font-semibold text-xl tracking-tight ml-2'>
+        <span onClick={change} className='font-semibold text-xl tracking-tight ml-2 cursor-pointer'>
           OCARDS
         </span>
       </div>
