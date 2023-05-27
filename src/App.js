@@ -7,7 +7,8 @@ import { Home } from './Home'
 import Particles from 'react-particles'
 import { loadFull } from 'tsparticles'
 import { useCallback } from 'react'
-import OCards from './OCards'
+import Form from './Form'
+import Ocard from './Ocard.jsx'
 
 const App = () => {
 
@@ -26,7 +27,8 @@ const App = () => {
         <div className='bg-black text-white'>
           <Routes>
             <Route path='/' element={<Home />}></Route>
-            <Route path='/ocards' element={<OCards />}></Route>
+            <Route path='/form' element={<Form />}></Route>
+            <Route path='/ocards' element={<Ocard />}></Route>
           </Routes>
           <Footor />
         </div>
