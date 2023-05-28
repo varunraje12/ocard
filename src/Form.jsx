@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { database } from './appwrite/config'
 
 const Form = () => {
   const navigate = useNavigate()
@@ -13,18 +14,41 @@ const Form = () => {
   const [github, setGithub] = useState("")
   const [whatsapp, setWhasapp] = useState("")
 
-  function makecard(e) {
+  async function makecard(e) {
+ 
     let data = { name, age, profession, image, instagram, linkedin, github, whatsapp }
-    console.log(data)
+    
+    if(name&&profession&&image&&whatsapp){
+      var x=await adddata();
+    navigate("/ocards");
+    }
+    else{
+      alert("Please fill the Form correctly!");
+    }
     // e.preventDefault()
   }
 
-  function change() {
-    if (name && age && profession && image) {
-      navigate('/ocards')
-    }
+ 
+  const adddata=async()=>{
+  try{
+    var x=await database.createDocument(process.env.REACT_APP_DATABASE_ID,process.env.REACT_APP_COLL_ID,"unique()",{
+    name:name,
+    age:age,
+    profession:profession,
+    email:"pranjal.maurya402@gmail.com",
+    photo:"https://www.google.com",
+    insta:instagram,
+    linkedin:linkedin,
+    github:github,
+    whatsapp:whatsapp
+  }); 
+  localStorage.setItem("id",x.$id);
+  console.log(x);
+}
+catch(e){
+  console.log(e);
+}  
   }
-
   return (
     <>
       <h1 className='flex justify-center text-3xl font-bold p-2'>Fill the form to Get Your OCard</h1>
@@ -116,7 +140,11 @@ const Form = () => {
         </div>
         <div className='flex justify-center'>
 
-          <button onClick={() => { makecard(); change() }} className=' bg-blue-500 p-3 rounded-md text-black hover:text-white hover:bg-blue-300 cursor-pointer'>Get Your Ocard</button>
+          <button onClick={(e) => { 
+               e.preventDefault();
+            makecard();
+             
+            }} type="submit" className=' bg-blue-500 p-3 rounded-md text-black hover:text-white hover:bg-blue-300 cursor-pointer'>Get Your Ocard</button>
         </div>
 
       </form>

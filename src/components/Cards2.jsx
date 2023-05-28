@@ -15,7 +15,7 @@ const Cards2 = () => {
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pranjal Maurya</h5>
           </a>
           <p class="mb-3 font-semibold">Enterpreneur</p>
-          <p class="mb-3 font-medium">Male ,21</p>
+          <p class="mb-3 font-medium">Male ,20</p>
         </div>
         <div className='flex justify-center gap-3  '>
           <a href='/'><AiOutlineInstagram size={42} className='text-pink-700 rounded bg-white p-1 cursor-pointer' /></a>
