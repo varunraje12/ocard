@@ -40,10 +40,10 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             style={({ isActive }) => (isActive ? { color: '#0f0' } : undefined)}
-            to='/ocards'
+            to='/form'
             className='block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4'
           >
-            OCARDS
+            FORM
           </NavLink>
         </div>
       </div>

@@ -7,13 +7,13 @@ export const Home = () => {
   const navigate = useNavigate()
 
   function change() {
-    navigate('/ocards')
+    navigate('/form')
   }
 
   return (
     <>
-      <div className='flex justify-center items-center p-3 h-[350px]'>
-        <div>
+      <div className='flex justify-center items-end p-3   h-[350px]'>
+        <div className=''>
           <h1 className='text-4xl font-bold p-2 text-center'>WELCOME TO OCARDS</h1>
           <div className='text-xl text-center'>
             <Typewriter
@@ -23,12 +23,14 @@ export const Home = () => {
                 autoStart: true
               }}
             />
+            <div className='mt-3'>
+              <button onClick={change} className='bg-blue-500 p-2 m-3 rounded-md text-black hover:text-white hover:bg-blue-300 cursor-pointer'>Switch to OCards</button>
+            </div>
+
           </div>
         </div>
       </div>
-      <div className='flex justify-center '>
-        <button onClick={change} className='bg-blue-500 p-3 rounded-md text-black hover:text-white hover:bg-blue-300 cursor-pointer'>Switch to OCards</button>
-      </div>
+
 
       <div className='flex justify-center p-4'>
         <img src={ManThinking} alt='Man Thinking' width={250} height={250} />
@@ -97,7 +99,7 @@ export const Home = () => {
           />
         </div>
 
-        <button className='bg-blue-500 p-3 rounded-md text-black hover:text-white hover:bg-blue-300 '>Make my Card</button>
+        <button className='bg-blue-500 p-3 rounded-md my-4 text-black hover:text-white hover:bg-blue-300 '>Make my Card</button>
       </div>
     </>
   )
