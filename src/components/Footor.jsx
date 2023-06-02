@@ -10,9 +10,9 @@ const Footor = () => {
           <div>
             <h2 className="text-lg font-semibold text-white">Follow us on</h2>
             <div className="flex gap-3 py-2">
-              <a href="https://www.instagram.com"><AiOutlineInstagram size={42} className='text-amber-700 rounded-full p-1 cursor-pointer' /></a>
+              <a href="https://www.instagram.com"><AiOutlineInstagram size={42} className='text-pink-700 rounded-full p-1 cursor-pointer' /></a>
               <AiOutlineWhatsApp size={42} className='text-green-700 rounded-full p-1 cursor-pointer' />
-              <a href="https://www.youtube.com"> <AiFillYoutube size={42} className='text-red-500 rounded-full p-1 cursor-pointer' /></a>
+              <a href="https://www.youtube.com"> <AiFillYoutube size={42} className='text-red-600 rounded-full p-1 cursor-pointer' /></a>
             </div>
           </div>
         </div>
